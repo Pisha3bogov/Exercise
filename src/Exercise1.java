@@ -4,14 +4,10 @@ import java.util.Scanner;
 
 public class Exercise1 {
     public static void main(String[] args) {
-        List<Integer> array = new ArrayList<>();
-
-        initializeList(array);
-
-        System.out.println("Количество отрицательных чисел: " + otrArray(array));
+        otrArray();
     }
-
-    private static void initializeList(List<Integer> array){
+    private static void otrArray (){
+        List<Integer> array = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
 
         do{
@@ -20,16 +16,14 @@ public class Exercise1 {
         }while (array.get(array.size()-1) != 100);
 
         array.remove(array.size()-1);
-    }
 
-    private static int otrArray (List<Integer> array){
         int count = 0;
 
         for(Integer el:array){
             if (el<0) count++;
         }
 
-        return count;
+        System.out.println("Количество отрицательных чисел: " + count);
     }
 }
 
